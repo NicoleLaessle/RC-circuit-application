@@ -3,7 +3,6 @@ Report the voltage after: 0.25, 0.5, and 1.0 seconds (give values to 2 decimal p
 • How long does it take for the voltage to reach 8.0 Volts? (give answer to 2 decimal places)
 • Plot the voltage V(t) for the first one second. Set the range of the vertical axis from 0 to 10 V. Include
 a grid, title, and axis labels.
-
 %RC circuit application
 %Define some constants
 RC=0.2;
@@ -14,15 +13,12 @@ Va=10;
 [t,V]=ode45(@(t,V) (Va-V)/RC, [0 0.25],Vi);
 n=length(V);
 fprintf("The voltage after 0.25s is %.2f V\n",V(n))
-
 [t,V]=ode45(@(t,V) (Va-V)/RC, [0 0.5],Vi);
 n=length(V);
 fprintf("The voltage after 0.5s is %.2f V\n",V(n))
-
 [t,V]=ode45(@(t,V) (Va-V)/RC, [0 1],Vi);
 n=length(V);
 fprintf("The volatage after 0.1s is %.2f V\n",V(n))
-
 %Logical comparison
 near8v=V>7.9 & V<8.1;
 time8v=t(near8v);
